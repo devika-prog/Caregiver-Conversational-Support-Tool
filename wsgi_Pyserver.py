@@ -166,8 +166,3 @@ def application(environ, start_response):
 
     start_response('405 Method Not Allowed', headers)
     return [b'Method Not Allowed']
-
-#if __name__ == "__main__":
-#    httpd = make_server(HOST, PORT, application)
-#    print(f"Server running on {HOST}:{PORT}")
-#    httpd.serve_forever()
