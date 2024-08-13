@@ -3,49 +3,16 @@ from wsgiref.simple_server import make_server
 from langchain_community.llms import Ollama
 from urllib.parse import parse_qs
 
-#import subprocess
-
-# NEW: # Preload the model using the CLI command
-#subprocess.run(["ollama", "run", "llama3", ""])
-#print('preloaded model')
-
 
 # Set model to be LlAMA3
 llm = Ollama(model="llama3")
-# Warm-up the model by making a dummy request
-#ensures that the first real request is faster, 
-#dummy_prompt = "Hello, this is a warm-up request."
-#dummy = llm.invoke(dummy_prompt)
-#print('dummy message is', dummy)
 
-HOST = '127.0.0.1'
-PORT = 8080
 
 # Starting chat message placeholder
 current_chats = ['I need help solving a math problem.']
 
 # Initialize an empty dictionary to contain lists of chat messages
 sessions_dict = {}
-
-static_prompt = "I am a middle schooler, and I don't know how to do this math problem. Give a response that is short enough for a middle schooler to understand."
-
-prompt_context_test = '''You are a parent providing assistance to your middle-school child for their math homework. 
-Each response should have a short justification  delimited with square brackets before the message.
-Here are some examples of responses. 
-When responding to errors, say something like:
-[Your child made an error] "I appreciate your effort. Let's try solving the problem together. Can you tell me what you did first?"
-[Your child made an error] "I like how hard and focused you are working on this problem. Please explain to me how you approached the first step."
-[Your child made an error] "It makes me happy to see your effort. Can you show me how you started solving the problem?"
-
-When determining what a student already knows, say something like:
-[Ask to self-explain]"Tell me what you mean"
-[Ask to self-explain] "Talk about it some more"
-[Ask to self-explain] "Why is that?"
-
-When giving praise, say something like:
-[Praise your child for a correct attempt] "Great job on solving that math problem. You persevered through solving by using a new math concept."
-[Praise your child for a correct attempt] "I love how you tried very hard and focused on the problem!"
-[Praise your child for a correct attempt] "You are almost there! I am proud of how you are persevering through and striving to solve the problem. Keep going!"'''
 
 prompt_context = '''You are a parent providing assistance to your middle-school child for their math homework. 
 Here are some examples of good tutoring practices: 
@@ -80,11 +47,7 @@ print('seed message is', seed_message)
 
 def application(environ, start_response):
     headers = [
-        #('Access-Control-Allow-Origin', 'https://equations.mathtutor.web.cmu.edu'),
-        #('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'),
-        #('Access-Control-Allow-Headers', 'Content-Type'),
         ('Content-type', 'application/json')
-        #('Access-Control-Allow-Private-Network', 'true'),
     ]
 
     if environ['REQUEST_METHOD'] == 'OPTIONS':
@@ -158,7 +121,6 @@ def application(environ, start_response):
         message_list = ['']
 
         # Look at all sent messages in current_chats when coming up with new responses
-        #chats_string = ' '.join(current_chats)
         chats_string = ' '.join(sessions_dict[sessionID])
         print('chats string is', chats_string)
 
@@ -191,11 +153,6 @@ def application(environ, start_response):
                 else:
                     new_message = message
                 message_list.append(new_message)
-
-
-            #ensure that all explanations have square bracket explanation at beginning
-
-            #message_list = split_string
 
         # Sending back to Mathtutor
         data['Response'] = message_list  
