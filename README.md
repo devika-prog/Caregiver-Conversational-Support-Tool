@@ -27,3 +27,7 @@ Install required dependencies before running:
 
         pip install langchain-community
 
+To run the file (ensure that python3 is installed):
+         
+        python3 promptEngineeringExperiments.py
+
