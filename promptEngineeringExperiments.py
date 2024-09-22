@@ -1,10 +1,13 @@
-'''the following is the portion of the code from our server architecture that involves
-gathering different contextual information and assembling them into a prompt. 
-The purpose of providing this code is for users to understand how providing different values for 
-contextual information provided to the prompt
-results in different generated message recommendations.'''
+#The following is a modified portion of the code from our server architecture that involves
+#gathering different contextual information and assembling them into a prompt. 
 
+#The purpose of providing this code is for users to understand how supplying different values for 
+#contextual information provided to the prompt
+#results in different characteristics of generated message recommendations.
 
+#For the user: only modify the code in the portion labeled TODO FOR USER
+
+#Refer to README to install required dependencies
 from langchain_community.llms import Ollama
 
 # Set large language model to be Llama 3
@@ -38,40 +41,52 @@ Use the tone that the parent has been using in previous messages to generate mes
 
 message_list_end = ']'
 
-# In our server, this would be extracting data from the request
-#modify the values in the following 5 variables
 
-#any string in the form "user: message"
+#TODO FOR USER:
+#In our server, the following portion would be extracting data from the request (JSON).
+#Here, we have replaced it with an option for users to modify the values in the following 5 variables.
+#There are currently placeholders for each variable; follow the instructions in the comments to modify the values.
+
+#chat_message: any string in the form "user: message"
 chat_message = "Student: I need help on a math problem"
 
-#string representation of suggested next steps to solving equation
+#next step: string representation of suggested next steps to solving equation
 next_step = ["Subtract 2 from both sides"]
 
-#checks if student used hints: string representation of 'True' or 'False'
+#student_hint: string representation of 'True' or 'False' (this variable holds whether or not the student has used hints)
 student_hint = 'True'
 
-#checks accuracy of previous attempt: 'correct' or 'error'
+#student_accuracy: 'correct' or 'error' (this variable holds the accuracy of a previous problem-solving attempt by the student)
 student_accuracy = 'error'
 
-#string representation of current equation
+#string representation of current equation (must be an equation involving solving for x)
+#for instance, equations can be of the form: x+a=b, ax=b, ax+b=c, a(bx+c)=d, a(bx+c)+d=e, ax+b=cx, ax+b=cx+d 
 question = '6x=12'
 
 
-# Initialize response components
+#The next portion assembles the information from the variables above into a prompt.
+#Each variable has a component in the prompt.
+#The following code SHOULD NOT be modified; this is the structure of our latest prompt (Prompt 7).
+
+#Initialize response components:
 hint_prompt = ''
 next_step_prompt = ''
 acc_prompt = ''
 question_prompt = ''
 
-# Process data
+# Process data, by creating a portion of the prompt corresponding to the values in each variable.
+
+#integrating next_step into the prompt
 if next_step:
     next_step_prompt = ' Here are suggested next steps: ' + next_step[0] + ' .'
         
+#integrating student_hint into the prompt
 if student_hint == 'False':
     hint_prompt = ' Your child did not use a hint, so advise them to use one.'
 else:
     hint_prompt = ' Your child did use a hint, so ask them what they understood from the hint.'
 
+#integrating student_accuracy into the prompt
 if student_accuracy == 'null':
     acc_prompt = ''
 elif student_accuracy == 'error':
@@ -79,6 +94,7 @@ elif student_accuracy == 'error':
 else:
     acc_prompt = ' Your child submitted a correct response, so praise them as described earlier.'
 
+#integrating current question into the prompt
 if question:
     question_prompt = 'This is the equation your child is working on: ' + question + 'They need to solve for x'
 
@@ -94,11 +110,11 @@ if(not 'Typing' in chat_message):
         # Look at all sent messages in current_chats when coming up with new responses
         chats_string = ' '.join(current_chats)
 
-        # Join all sent information to make complete prompt
+        # Join all components of prompt to make complete prompt
         prompt = prompt_context + hint_prompt + acc_prompt + next_step_prompt + question_prompt + prompt_message + chats_string + message_list_end
         
-        #Uncomment line below to view assembled prompt
-        print('This is the current prompt: {}'.format(prompt))
+        #TODO for user: uncomment line below to view assembled prompt, if desired
+        #print('This is the current prompt: {}'.format(prompt))
 
         # Use the `invoke` method to generate a message based on some input prompt.
         messages = llm.invoke(prompt)
@@ -122,4 +138,6 @@ if(not 'Typing' in chat_message):
             else:
                 new_message = message
                 message_list.append(new_message)
+
+            #Displays all generated messages in terminal
             print('Generated message recommendation is:', new_message)
