@@ -1,7 +1,7 @@
 # Caregiver Conversational Support Tool (CCST)
 This repository contains the prompts used while designing the CCST, an LLM-integrated intelligent tutoring system with parent-student chat functionality.
 
-[promptEngineeringExperiments.py](Caregiver-Conversational-Support-Tool/promptEngineeringExperiments.py)   (https://github.com/devika-prog/Caregiver-Conversational-Support-Tool/blob/main/promptEngineeringExperiments.py) allows users to understand how providing different values for contextual information provided to the prompt results in different characteristics of generated message recommendations.
+[promptEngineeringExperiments.py](main/promptEngineeringExperiments.py)   (https://github.com/devika-prog/Caregiver-Conversational-Support-Tool/blob/main/promptEngineeringExperiments.py) allows users to understand how providing different values for contextual information provided to the prompt results in different characteristics of generated message recommendations.
 
 Only modify the code in the portion labeled TODO FOR USER
 
