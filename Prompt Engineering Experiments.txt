@@ -81,14 +81,14 @@ When giving praise, say something like:
 "I love how you tried very hard and focused on the problem!"
 "You are almost there! I am proud of how you are persevering through and striving to solve the problem. Keep going! 
 
-The next part of the prompt incorporates additional problem solving context, and will be different depending on certain factors.
+*The next part of the prompt incorporates additional problem solving context, and will be different depending on certain factors.
 
 If the student did/did not use a hint
 If the student was correct or made an error
 Suggested next steps for the problem
 The question the student is working on
 
-For instance, the second part of the prompt could look like this: 
+For instance, the second part of the prompt could look like this:*
 "Your child did use a hint, so ask them what they understood from the hint. Your child made an error, so you should focus on responding to the error as described earlier. Here are suggested next steps: Subtract 5 from both sides: 15-5 = -2x-5+5. This is the equation your child is working on: ' 15 = -2x-5. They need to solve for x. The elements in this list are messages that have been sent in a conversation between a middle school student and their parent about a math problem (in order).
 Use these messages to generate a 1 to 2 sentence response that a parent would say to their child at this point in the conversation. 
 Do not justify your responses, and do not start messages with "Here's a response."
@@ -114,14 +114,14 @@ When giving praise, say something like:
 "I love how you tried very hard and focused on the problem!"
 "You are almost there! I am proud of how you are persevering through and striving to solve the problem. Keep going!
 
-The next part of the prompt incorporates additional problem solving context, and will be different depending on certain factors.
+*The next part of the prompt incorporates additional problem solving context, and will be different depending on certain factors.
 
 If the student did/did not use a hint
 If the student was correct or made an error
 Suggested next steps for the problem
 The question the student is working on
 
-For instance, the second part of the prompt could look like this: 
+For instance, the second part of the prompt could look like this:*
 Your child did use a hint, so ask them what they understood from the hint. 
 Your child made an error, so you should focus on responding to the error as described earlier. 
 Here are suggested next steps: Subtract 5 from both sides: 15-5 = -2x-5+5. This is the equation your child is working on: 15 = -2x-5. They need to solve for x. 
