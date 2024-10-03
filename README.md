@@ -12,20 +12,32 @@ Only modify the code in the portion labeled TODO FOR USER. Users can modify the 
    - student_accuracy
    - question
 
+Ensure that Python is installed (version 3.7 or later is recommended).
+
+### Setup Instructions
+
+1. Clone the repository, then cd into folder.
+
 Install required dependencies before running:
 1. Download [Ollama]([docs/CONTRIBUTING.md](https://ollama.com/download/mac))
-2. Create a virtual environment (only necesssary if prompted)
+3. Create a virtual environment (recommended)
    
     - To create:
-    
-          python -m venv .venv
-    - To activate:
+           
+            python -m venv .venv 
+        
+    - To activate (macOS/Linux):
     
           source .venv/bin/activate
-   
-3. Install the langchain dependencies:
+    - To activate (Windows):
 
-        pip install langchain-community
+            venv\Scripts\activate
+
+   
+4. Install dependencies:
+
+        pip install -r requirements.txt
+
 
 To run the file (ensure that python3 is installed):
          
