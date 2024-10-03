@@ -64,7 +64,7 @@ To run the file (ensure that python3 is installed):
 
 #for instance, equations can be of the form: x+a=b, ax=b, ax+b=c, a(bx+c)=d, a(bx+c)+d=e, ax+b=cx, ax+b=cx+d 
 
-      question = '6x=12'
+      question = '6x-2=12'
 
 ### This is example output:
 Generated message recommendation is: [Ask to self explain]  I appreciate your effort. Let's try solving the problem together. What do you think happens when we subtract 2 from both sides?
