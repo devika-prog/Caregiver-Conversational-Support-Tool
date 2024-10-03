@@ -59,9 +59,9 @@ student_hint = 'True'
 #student_accuracy: 'correct' or 'error' (this variable holds the accuracy of a previous problem-solving attempt by the student)
 student_accuracy = 'error'
 
-#string representation of current equation (must be an equation involving solving for x)
+#question: string representation of current equation (must be an equation involving solving for x)
 #for instance, equations can be of the form: x+a=b, ax=b, ax+b=c, a(bx+c)=d, a(bx+c)+d=e, ax+b=cx, ax+b=cx+d 
-question = '6x=12'
+question = '6x + 2 = 12'
 
 
 #The next portion assembles the information from the variables above into a prompt.
