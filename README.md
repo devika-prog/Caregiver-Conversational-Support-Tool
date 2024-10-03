@@ -24,7 +24,7 @@ Install required dependencies before running:
    
     - To create:
            
-            python -m venv .venv 
+            python3 -m venv .venv 
         
     - To activate (macOS/Linux):
     
@@ -42,4 +42,36 @@ Install required dependencies before running:
 To run the file (ensure that python3 is installed):
          
         python3 promptEngineeringExperiments.py
+
+### These are the current default values of the variables:
+#chat_message: any string in the form "user: message"
+
+      chat_message = "Student: I need help on a math problem"
+
+#next step: string representation of suggested next steps to solving equation
+
+      next_step = ["Subtract 2 from both sides"]
+
+#student_hint: string representation of 'True' or 'False' (this variable holds whether or not the student has used hints)
+
+      student_hint = 'True'
+
+#student_accuracy: 'correct' or 'error' (this variable holds the accuracy of a previous problem-solving attempt by the student)
+
+      student_accuracy = 'error'
+
+#question: string representation of current equation (must be an equation involving solving for x)
+
+#for instance, equations can be of the form: x+a=b, ax=b, ax+b=c, a(bx+c)=d, a(bx+c)+d=e, ax+b=cx, ax+b=cx+d 
+
+      question = '6x=12'
+
+### This is example output:
+Generated message recommendation is: [Ask to self explain]  I appreciate your effort. Let's try solving the problem together. What do you think happens when we subtract 2 from both sides?
+
+Generated message recommendation is: [Praise your child for a correct attempt]   I like how you're thinking about this problem! You're really close. Can you walk me through what you did so far?
+
+Generated message recommendation is: [Your child has made an error]   I appreciate your effort on this problem. Let's take another look together. What was the first step you took to solve it?
+
+
 
