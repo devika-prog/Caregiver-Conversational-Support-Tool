@@ -1,4 +1,25 @@
 # Caregiver Conversational Support Tool (CCST)
+Supplementary repository for the manuscript "Combining Large Language Models with Tutoring System Intelligence: A Case Study in Caregiver Homework Support," accepted as a full paper to LAK '25.
+
+### Citation
+
+Venugopalan, D., Yan, Z., Borchers,C., Lin, J., & Aleven, V. (2025). Combining Large Language Models
+with Tutoring System Intelligence: A Case Study in Caregiver Homework Support. In Proceedings of the 15th International Learning Analytics and Knowledge Conference (LAK 2025). Association for Computing Machinery. https://doi.org/10.1145/3706468.3706516
+
+      @inproceedings{venugopalan2025caregiver,
+          author    = {Venugopalan, Devika and Yan, Ziwen and Borchers, Conrad and Lin, Jionghao and Aleven, Vincent},
+          title     = {{Combining Large Language Models with Tutoring System Intelligence: A Case Study in Caregiver Homework Support.}},
+          booktitle = {Proceedings of the 15th International Learning Analytics and Knowledge Conference},
+          series    = {LAK 2025},
+          location  = {Dublin, Ireland},
+          publisher = {Association for Computing Machinery},
+          address   = {New York, NY, USA},
+          doi       = {10.1145/3706468.3706516},
+          month     = {03},
+          year      = {2025}
+      }                           
+
+### Overview
 This repository contains the prompts used while designing the CCST, an LLM-integrated intelligent tutoring system with parent-student chat functionality.
 
 [promptEngineeringExperiments.py](promptEngineeringExperiments.py) is a modified portion of the code from our server architecture that involves gathering different contextual information and assembling them into a prompt. 
