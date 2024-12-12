@@ -3,7 +3,7 @@ Supplementary repository for the manuscript "Combining Large Language Models wit
 
 ### Citation
 
-Venugopalan, D., Yan, Z., Borchers,C., Lin, J., & Aleven, V. (2025). Combining Large Language Models
+Venugopalan, D., Yan, Z., Borchers, C., Lin, J., & Aleven, V. (2025). Combining Large Language Models
 with Tutoring System Intelligence: A Case Study in Caregiver Homework Support. In Proceedings of the 15th International Learning Analytics and Knowledge Conference (LAK 2025). Association for Computing Machinery. https://doi.org/10.1145/3706468.3706516
 
       @inproceedings{venugopalan2025caregiver,
